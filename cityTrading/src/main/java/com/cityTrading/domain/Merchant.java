@@ -1,18 +1,30 @@
 package com.cityTrading.domain;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
-public class Merchant {
+@DynamicInsert
+@DynamicUpdate
+public class Merchant extends BaseDomain{
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	
+	@Length(min = 3 ,max = 12,message = "用户名长度需在3到12位之间")
 	private String username;
 	
+	@Length(min = 3 ,max = 12,message = "密码长度需在3到12位之间")
 	private String password;
 	
 	private String nikename;
@@ -27,6 +39,7 @@ public class Merchant {
 	 */
 	private Integer gender;
 	
+	@Pattern(regexp = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$" ,message = "请输入正确的手机号")
 	private String phone;
 	
 	private String email;
@@ -48,9 +61,9 @@ public class Merchant {
 	 */
 	private Integer evaluate;
 	
-	private String createTime;
+	private Date createTime;
 	
-	private String updateTime;
+	private Date updateTime;
 
 	public Long getId() {
 		return id;
@@ -148,19 +161,19 @@ public class Merchant {
 		this.evaluate = evaluate;
 	}
 
-	public String getCreateTime() {
+	public Date getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 
-	public String getUpdateTime() {
+	public Date getUpdateTime() {
 		return updateTime;
 	}
 
-	public void setUpdateTime(String updateTime) {
+	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
 

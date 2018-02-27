@@ -1,9 +1,10 @@
 package com.cityTrading.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.cityTrading.domain.User;
 
-public interface UserDao extends JpaRepository<User, Long>{
+public interface UserDao extends BaseDao<User, Long>{
 
+	User findById(Long id);
+	
+	User findUserByUsernameAndPassword(String username,String pwd);
 }

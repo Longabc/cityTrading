@@ -17,9 +17,6 @@ public class UserControl {
 	@RequestMapping("/getUser")
 	public User getUser() {
 		User user = new User();
-		user.setAge(11);
-		user.setNike("龙qi");
-		System.out.println(user);
 		return user;
 	}
 	
@@ -31,11 +28,6 @@ public class UserControl {
 	
 	@RequestMapping("/createUser")
 	public String createUser() {
-		User user = new User();
-		user.setAge(11);
-		user.setNike("龙qi");
-		userDao.save(user);
-		System.out.println(user);
 		return "成功创建一个新用户了";
 	}
 }

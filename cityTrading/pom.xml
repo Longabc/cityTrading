@@ -41,6 +41,13 @@
         <artifactId>junit</artifactId>
         <scope>test</scope>
     </dependency> 
+    
+    <!-- 添加 thymeleaf依赖 -->
+     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    
   </dependencies>
   
     <!-- Spring Boot也提供了一个可选的 Maven Plugin来创建可执行的jars -->  

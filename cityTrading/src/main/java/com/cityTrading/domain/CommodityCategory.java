@@ -1,9 +1,11 @@
 package com.cityTrading.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 /**
  * 商品分类表
@@ -11,7 +13,9 @@ import javax.persistence.Id;
  *
  */
 @Entity
-public class CommodityCategory {
+@DynamicInsert
+@DynamicUpdate
+public class CommodityCategory extends BaseDomain{
 
 	@Id
 	@GeneratedValue

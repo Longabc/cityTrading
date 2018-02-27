@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>头部</title>
+<link rel="stylesheet" type="text/css" href="css/public.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" th:inline="javascript">
+	/*<![CDATA[*/
+   ctx = /*[[@{/}]]*/ '';
+   /*]]>*/
+</script>
+</head>
+<body>
+	<!-- 头部 -->
+		<h1 th:text="${session.user.username}"></h1>
+	<div class="head">
+		<div class="headL">
+			<img class="headLogo" src="img/logLOGO.png"/>
+		</div>
+		<div class="headR">
+			<span style="color:#FFF">欢迎：
+			</span>
+			<span th:text="${session.user.username}"></span>
+			<a href="logout" rel="external" target="_parent">【退出】</a>
+		</div>
+	</div>
+</body>
+</html>
