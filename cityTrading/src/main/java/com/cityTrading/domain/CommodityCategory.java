@@ -23,6 +23,8 @@ public class CommodityCategory extends BaseDomain{
 	
 	private Long parentId;
 	
+	private String parentName;
+	
 	/**
 	 * 标题
 	 */
@@ -77,6 +79,12 @@ public class CommodityCategory extends BaseDomain{
 	public void setIcon(String icon) {
 		this.icon = icon;
 	}
-	
-	
+
+	public String getParentName() {
+		return parentName;
+	}
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
+	}
 }

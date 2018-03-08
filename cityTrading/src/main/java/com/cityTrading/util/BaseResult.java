@@ -1,11 +1,32 @@
 package com.cityTrading.util;
 
-public class BaseResult {
+import java.util.List;
 
-	private int status;
+public class BaseResult<T> {
+
+	/**
+	 * 默认成功
+	 */
+	private int status = StatusEnum.SUCCESS.getStatus();
 	
-	private String message;
+	private String message  = StatusEnum.SUCCESS.getMessage();
 	
+	private List<T> data;//返回数据
+
+	public BaseResult() {
+		super();
+	}
+
+
+	public List<T> getData() {
+		return data;
+	}
+
+
+	public void setData(List<T> data) {
+		this.data = data;
+	}
+
 	public BaseResult(int status, String message) {
 		super();
 		this.status = status;

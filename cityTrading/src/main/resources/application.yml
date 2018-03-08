@@ -12,8 +12,16 @@ spring:
    ddl-auto: update
   show-sql: true
  thymeleaf:
-  mode: HTML5
+  mode: LEGACYHTML5
   encoding: UTF-8
   content-type: text/html
   cache: false
   prefix: classpath:/static/
+ properties:
+  hibernate:
+   enable_lazy_load_no_trans: true	#设置不用懒加载
+   
+manager:
+ pageSize: 50	#后台页面显示数据条数
+api:
+ pageSize: 20	#前台页面显示数据条数		
